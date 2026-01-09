@@ -63,17 +63,17 @@ Query: SELECT id, email FROM users;
 
 we can write column name in any order. 
 
-7. to delete the database:
-
-Syntax:	DROP DATABASE database_name;
-
-Query: DROP DATABASE startersql;
-
-8. to delete the table:
+7. to delete the table:
 
 Syntax:	DROP TABLE table_name;
 
 Query: DROP TABLE users;
+
+8. to delete the database:
+
+Syntax:	DROP DATABASE database_name;
+
+Query: DROP DATABASE startersql;
 
 9. SQL Script that creates a database, select this database, create a table in it and select all the columns of the table:
 
@@ -92,4 +92,61 @@ Query:
     );
 
     SELECT * FROM users;
+
+10. to select all the columns of the table:
+
+Syntax:	SELECT * FROM table_name;
+
+Query: SELECT * FROM users;
+
+11. to select one or more specific columns from the table:
+
+Syntax:	SELECT 1st_column_name, 2nd_column_name FROM table_name;
+
+Query: SELECT id, email FROM users;
+
+Here we can change the order of the column in SELECT Statement.
+
+12. to rename table users to programmers:
+
+Syntax:	RENAME TABLE current_table_name TO new_table_name;
+
+Query: RENAME TABLE users TO programmers;
+
+13. to add a new column in the table:
+
+Syntax: ALTER TABLE table_name ADD COLUMN column_name datatype constraint;
+
+Query: ALTER TABLE users ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
+
+14. to delete any column of the table:
+
+Syntax: ALTER TABLE table_name DROP COLUMN column_name;
+
+Query: ALTER TABLE users DROP COLUMN is_active;
+
+15. to change the string character length of any column of the table:
+
+Syntax: ALTER TABLE table_name MODIFY COLUMN column_name define_datatype_with_length
+
+Query: ALTER TABLE users MODIFY COLUMN name VARCHAR(150)
+
+Here we changed the string character length of name column from 100 to 150.
+
+16. to move the position of any column of the table:
+
+Syntax: ALTER TABLE table_name MODIFY COLUMN column_name datatype AFTER column_name;
+
+Query: ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+
+Here we moved the column email to after id.
+
+17. to move any column to first position in the table:
+
+Syntax: ALTER TABLE table_name MODIFY COLUMN column_name datatype FIRST;
+
+Query: ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
+
+Here we moved the column date of birth to the first position in the table.
+
 

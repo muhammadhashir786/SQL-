@@ -1,3 +1,25 @@
+Topics:
+
+Database 
+Query 
+SQL 
+Importance of Database
+CRUD 
+DBMS 
+D/F B/W Relational DBMS and Non-Relational DBMS
+Install MYSQL
+Rules OF SQL/My SQL server
+1. Create Database
+2. Select Database
+3. Create Table
+4. Check the Data of the table
+5. Delete Database and DELETE Table
+6. Write an Script Program and Save this Script in file
+7. How to save the script in fie?
+8. Comment
+
+Notes Starts Here!
+
 Database:
 
 a database is a way to store data in a format which makes it easily accessible. 
@@ -114,9 +136,9 @@ type connection name, click ok, give password, save password in vault, ok
 
 Code 01:
 
-Create Database:
+1. Create Database:
 
-Rules:
+Rules OF SQL/My SQL server:
 
 database name, table name, column name does not include space.
 we can write underscore "_" instead of space.
@@ -129,7 +151,7 @@ then we will see the text below: "1 row affected".
 after that click on the refresh icon on the left side bar named "Schemas".
 then here, we will see a database named "startersql".
 
-Select Database:
+2. Select Database:
 
 then select this database to work on it.
 
@@ -139,7 +161,7 @@ we can also switch database between work but ideally we cannot do like this.
 we select 1 database and then work on it.
 after that we will see the text below: "0 rows affected".
 
-Create Table:
+3. Create Table:
 
 after that create a table.
 
@@ -150,12 +172,15 @@ we can write constraints as many as we want.
 
 what are datatypes?
 what are constraints?
+above 2 topics include in notes 2
+
+4. Check the Data of the table:
 
 Q4: after creating the table, how to see/check the data/structure of the table?
 
 we can see/check the data or structure of the table by using SELECT statement.
 
-Drop Database and Drop Table:
+5. Delete/Drop Database and DELETE/Drop Table:
 
 Drop database means delete the complete database along with all the tables and their data that created and stored in that database.
 Drop table means delete the table along with data that is stored in that table.
@@ -163,7 +188,9 @@ Drop table means delete the table along with data that is stored in that table.
 Q5: How to delete the table?
 Q6: How to delete the database?
 
-Write an Script Program and Save this Script in file:
+above 2 topics included in Queries 1
+
+6. Write an Script Program and Save this Script in file:
 
 when we create a SQL script by writing many Queries, we can save this script in the file. 
 and when we need this SQL script, we just open this script file and run it.
@@ -177,6 +204,15 @@ give the name to the file
 choose your location where you want to save
 click ok 
 
+Q8: What is a comment?
+
+SQL ignores those lines or Queries that will be commented.
+
+we can write notes using comments.
+if we don't want to run any query we can do comment.
+
+press ctrl + / to comment or uncomment.
+type -- at the start of any line to comment or remove this to uncomment.
 
 
 
