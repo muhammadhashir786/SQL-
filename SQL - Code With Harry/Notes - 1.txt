@@ -1,0 +1,183 @@
+Database:
+
+a database is a way to store data in a format which makes it easily accessible. 
+short data can be stored in the form of files and folders and in excel and can access it easily.
+but long data can not be stored in the form of files, folders and in excel.
+
+we use database to access data in a particular format/pattern/serial or any order. 
+files or folders m store kia huwa data is trah se access nhi kia ja sakta, hamen khud se manually krna parega
+ye sara kaam, jo database kuch queries ki help se kar deta hai.
+
+What is Query?
+
+Query is like a question we ask to the database.
+we give instructions by using Query.
+Query is like a command that we give in cmd, terminal, git and github.
+Query is a command to the database that we give to the database by following some rules.
+we can write Queries in the white area. 
+
+What is the mean of issuing a Query/Query issue krna?
+
+write Queries in the white area and then run it by clicking on the flash icon. 
+
+What is SQL:
+
+SQL is all about writing efficient Queries and writing Queries that solves a problem. 
+
+Importance of Database:
+
+nowadays big data is stored in the database. 
+all the big companies such as google, facebook, chatgpt, instagram, linkedin, etc stores data in the database. 
+and when we open our chats in chatgpt, then it retrieves data from their database and behind the scenes SQL Queries run.
+
+we need data engineers to design these types of SQL Queries. 
+
+What is CRUD?
+
+there is a word in database which is CRUD.
+CRUD stands for Create, Read, Update, Delete. 
+these are 4 primary operations in any database to do. 
+we want to create a new record, read a record, update a record or delete a record. 
+
+we use database to create, read, update and delete records efficiently.
+we can store data in excel, but it is very limited in no of rows, computation time, speed.
+
+we need an efficient system to handle millions of data very easily. 
+
+What is DBMS?
+
+DBMS stands for Database Management System.
+when we interact with database, we do not directly interact with database.
+we do interactions through DBMS. 
+We give SQL Queries to the DBMS and it further applies in database and then do what you want.
+
+My SQL is the most popular database management system. 
+
+some other examples are:
+
+postgreSQL
+MS SQL
+MySQL 
+
+D/F B/W Relational DBMS and Non-Relational DBMS:
+
+Relational DBMS :
+
+Relational DBMS has a set schema. 
+Data Model is Table that consists into Rows & Columns. 
+we store data in the form of Tables.
+there are datatypes and constraints in the tables.
+Data is structured and we can link the tables using Foreign Key. 
+Rules are very strict because we store our data according to set schema.
+if this schema have not been followed then we cannot store our data.
+Example: agr hamen address k no of characters ko 1000 se kam rakhna hai to ham 1000 se ziada no fo characters nhi rakh sakte address m. 
+
+Non-Relational DBMS:
+
+We store data in Non-Relational DBMS in any set of schema. 
+it does not follow a particular set schema. 
+Data is flexible.
+don't need to use SQL always. 
+used when there are alot of read operations and to optimize read operations. 
+
+Most popular example is mongoDB. 
+Otehr examples:
+Cassandra
+Reddis
+neo4j
+
+First Install MYSQL:
+
+search mysql on google
+go to first website: dev.mysql.com
+click pre download 
+click no thanks just start download 
+after downloading, open installer
+click full, next
+next
+execute
+click next 4/5 times 
+give current root password 
+click check 
+click 2 times next 
+click execute 
+finist 
+2 times next 
+give that password 
+next 
+execute 
+next finish 
+
+after that, open MY SQL 
+click on + next to my sql connections.
+type connection name, click ok, give password, save password in vault, ok 
+
+Code 01:
+
+Create Database:
+
+Rules:
+
+database name, table name, column name does not include space.
+we can write underscore "_" instead of space.
+
+Q1: How to create a database?
+
+create a database named "startersql" by writing a Query.
+after that run the Query by clicking on the yellow flash icon.
+then we will see the text below: "1 row affected".
+after that click on the refresh icon on the left side bar named "Schemas".
+then here, we will see a database named "startersql".
+
+Select Database:
+
+then select this database to work on it.
+
+Q2: How to select database to work on it after creating database?
+
+we can also switch database between work but ideally we cannot do like this.
+we select 1 database and then work on it.
+after that we will see the text below: "0 rows affected".
+
+Create Table:
+
+after that create a table.
+
+Q3: How to create a table in a database?
+
+we can write constraints after datatype in the table.
+we can write constraints as many as we want. 
+
+what are datatypes?
+what are constraints?
+
+Q4: after creating the table, how to see/check the data/structure of the table?
+
+we can see/check the data or structure of the table by using SELECT statement.
+
+Drop Database and Drop Table:
+
+Drop database means delete the complete database along with all the tables and their data that created and stored in that database.
+Drop table means delete the table along with data that is stored in that table.
+
+Q5: How to delete the table?
+Q6: How to delete the database?
+
+Write an Script Program and Save this Script in file:
+
+when we create a SQL script by writing many Queries, we can save this script in the file. 
+and when we need this SQL script, we just open this script file and run it.
+
+Q7: How to save the SQL script in the file?
+
+Write the script first
+go to file 
+click on save script file
+give the name to the file 
+choose your location where you want to save
+click ok 
+
+
+
+
+

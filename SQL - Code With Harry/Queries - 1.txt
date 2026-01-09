@@ -1,0 +1,95 @@
+1. to create a database:
+
+Syntax:	CREATE DATABASE database_name;
+
+Query:	CREATE DATABASE startersql;
+
+after run the above Query, 0 rows affected
+
+2. to select a database to work on it:
+
+Syntax:	USE DATABASE database_name;
+
+Query:	USE DATABASE startersql;
+
+after run the above Query, 0 rows affected
+
+3. to create a table:
+
+Syntax:	CREATE TABLE table_name ();
+
+Query:	CREATE TABLE users ();
+
+4. to define the structure of a table:
+
+Syntax:
+
+CREATE TABLE table_name (
+	1st_column_name	datatype(define_character_length_if_needed)	constraints
+	2nd_column_name	datatype(define_character_length_if_needed)	constraints
+	3rd_column_name	datatype(define_character_length_if_needed)	constraints
+);
+
+Query:
+
+CREATE TABLE users (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL, 
+	email VARCHAR(100) UNIQUE NOT NULL, 
+	gender ENUM('Male', 'Female', 'Other'),
+	date_of_birth DATE, 
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Here, PRIMARY KEY and NOT NULL constraint included space.
+after run the above Query, 0 rows affected.
+
+Q: Here, what is current in the "CURRENT_TIMESTAMP"?
+
+5. to see/check the structure/data of the table:
+
+Syntax:	SELECT * FROM table_name;
+
+Query: SELECT * FROM users;
+
+Here * means all.
+the above Query will show you the structure or data of all the columns of table.
+
+6. to select one or more specific columns of the table:
+
+Syntax:	SELECT first column_name, 2nd column_name, ... FROM table_name;
+
+Query: SELECT id, email FROM users;
+
+we can write column name in any order. 
+
+7. to delete the database:
+
+Syntax:	DROP DATABASE database_name;
+
+Query: DROP DATABASE startersql;
+
+8. to delete the table:
+
+Syntax:	DROP TABLE table_name;
+
+Query: DROP TABLE users;
+
+9. SQL Script that creates a database, select this database, create a table in it and select all the columns of the table:
+
+Query: 
+
+    CREATE DATABASE startersql;
+    USE DATABASE startersql;
+
+    CREATE TABLE users (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL, 
+	email VARCHAR(100) UNIQUE NOT NULL, 
+	gender ENUM('Male', 'Female', 'Other'),
+	date_of_birth DATE, 
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+    SELECT * FROM users;
+
