@@ -1,0 +1,44 @@
+Insert Data in Table:
+
+1. to insert 1 row into table:
+
+Syntax:	INSERT INTO table_name VALUES
+	(insert data here);
+
+Query:	INSERT INTO users VALUES 
+	(1, 'Ahmad', 'ahmad@gmail.com', 'Male', '2000-01-01', DEFAULT);
+
+2. to insert data into specific columns of the table in 1 row:
+	type the name of the column in which you want to insert data in the Query:
+
+Syntax:	INSERT INTO table_name (1st_column_name, 2nd_column_name, ...) VALUES
+	(1st_column_data, 2nd_column_data, ...);
+
+Query:	INSERT INTO users (name, email, gender, date_of_birth) VALUES
+	('Ahmad', 'ahmad@gmail.com', 'Male', '2000-01-01');
+
+Here we can skip columns and also change the order of the columns when inserting data into table,
+but data is insert into the columns orderwise automatically.
+
+insert data in specific columns in 1 row:
+
+Query:	INSERT INTO users (name, email, gender, date_of_birth) VALUES
+	('Ahmad', 'ahmad@gmail.com', 'Male', '2000-01-01');
+
+3. to insert data into multiple rows at once:
+
+Syntax:	INSERT INTO table_name (1st_column_name, 2nd_column_name, ...) VALUES
+	(insert_data_into_1st_column),
+	(insert_data_into_2nd_column),
+	(insert_data_into_3rd_column); 
+
+Query:	INSERT INTO users (name, email, gender, date_of_birth) VALUES
+	('Imran', 'imran@example.com', 'Male', '2002-03-24'),
+	('Kashif', 'kashif@example.com', 'Male', '2005-05-15'),
+	('Bilal', 'bilal@example.com', 'Male', '2003-01-21'); 
+
+
+
+
+
+

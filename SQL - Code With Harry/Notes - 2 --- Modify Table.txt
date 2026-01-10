@@ -45,7 +45,7 @@ if we want to create a new table then we can use CREATE TABLE command.
 
 4. Rename Table:
 
-if we want to rename table then we can use RENAME TABLE command.
+if we want to rename table then we can use the keyword RENAME TABLE.
 
 5. Alter Table:
 
@@ -54,16 +54,20 @@ if we want to alter, change or modify the table then we can use ALTER TABLE comm
 Uses of Alter Table Command:
 
 1. add new column
+	to add a new column in the table, use keyword ADD COLUMN with ALTER TABLE
+
 2. delete any column 
+	to delete any column from the table, use keyword DROP COLUMN with ALTER TABLE
+
 3. change the string character length of column 
+	to change the string character length of any column of the table, use Keyword MODIFY COLUMN with ALTER TABLE
+
 4. move position of any column
+	to move the position of any column of the table, use the keyword MODIFY COLUMN with ALTER TABLE
+	to move the position of any column of the table after any column, use the keyword AFTER with MODIFY COLUMN along with ALTER TABLE command.
+	to move the position of any column of the table to the first, use the keyword FIRST with MODIFY COLUMN along with ALTER TABLE command.
+
 5. change column name of the table
 
-to add a new column in the table, use keyword ADD COLUMN with ALTER TABLE
-to delete any column from the table, use keyword DROP COLUMN with ALTER TABLE
-to change the string character length of any column of the table, use Keyword MODIFY COLUMN with ALTER TABLE
-to move the position of any column of the table, use the keyword MODIFY COLUMN with ALTER TABLE
-to move the position of any column of the table after any column, use the keyword AFTER with MODIFY COLUMN along with ALTER TABLE command.
-to move the position of any column of the table to the first, use the keyword FIRST with MODIFY COLUMN along with ALTER TABLE command.
-
+Q: How to change the column name of the table?
 

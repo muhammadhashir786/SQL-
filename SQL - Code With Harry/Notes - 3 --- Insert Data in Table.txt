@@ -1,0 +1,10 @@
+Insert Data Into Table:
+
+to insert data into table, use the INSERT INTO command.
+to insert data into specific column of the table, type the name of the column in which you want to insert data.
+
+we can insert data into columns by 1 row.
+but it is recommended to insert data into multiple rows at once, it saves time and increase productivity.
+
+Q: How to delete any row of the table?
+

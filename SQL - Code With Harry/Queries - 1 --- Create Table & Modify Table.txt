@@ -1,3 +1,5 @@
+Create Schema and Modify it:
+
 1. to create a database:
 
 Syntax:	CREATE DATABASE database_name;
@@ -8,9 +10,9 @@ after run the above Query, 0 rows affected
 
 2. to select a database to work on it:
 
-Syntax:	USE DATABASE database_name;
+Syntax:	USE database_name;
 
-Query:	USE DATABASE startersql;
+Query:	USE startersql;
 
 after run the above Query, 0 rows affected
 
@@ -80,7 +82,7 @@ Query: DROP DATABASE startersql;
 Query: 
 
     CREATE DATABASE startersql;
-    USE DATABASE startersql;
+    USE startersql;
 
     CREATE TABLE users (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -148,5 +150,4 @@ Syntax: ALTER TABLE table_name MODIFY COLUMN column_name datatype FIRST;
 Query: ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
 
 Here we moved the column date of birth to the first position in the table.
-
 

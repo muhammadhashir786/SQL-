@@ -15,6 +15,7 @@ USE startersql_1;
 
 -- SELECT * FROM users_1;
 -- SELECT id, email FROM users_1;
+-- SELECT date_of_birth, email, id FROM users_1;
 
 -- desc TABLE users_1;
 
