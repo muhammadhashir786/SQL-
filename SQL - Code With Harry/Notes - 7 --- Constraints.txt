@@ -9,22 +9,40 @@ Constraints are the rules that applied to the table columns to ensure the accura
 	NULL
 	TIMESTAMP
 	CHECK
+	DEFAULT
 
 1. NOT NULL:
 
-NOT NULL constraint defines that a column cannot have NULL value.
+NOT NULL constraint defines a column cannot have NULL value or empty.
 if we don't want to keep any column Null then we can use NOT NULL constraint.
 User must enter some data in the column, he cannot left the column empty.
+
+Query 1:
+
+INSERT INTO users (name, email, gender) VALUES
+('user@example.com', 'Male');
+
+Here we left the column name empty, we did not enter any name, so it gives error, name cannot be null.
+
+Query 2:
+
+INSERT INTO users (name, email, gender) VALUES
+('NULL', 'user2@example.com', 'Male');
+
+Here we type the value NULL in the name column, it means also empty or null.
 
 2. UNIQUE:
 
 UNIQUE constraint defines that all the values in a column are unique and different to each other.
 UNIQUE constraint is used to store unique data in the column of table.
 we cannot enter the same data into the column that have UNIQUE constraint.
-it is used during table creation or we can add UNIQUE constraint in the column of the table that already created by using ALTER TABLE command and follow the add constraint syntax.
+it is used during table creation or we can add UNIQUE constraint in the column of the table that already created by using ALTER TABLE command and
+follow the add constraint syntax.
 
 Example:
-if we use UNIQUE constraint in "email" column then user cannot create multiple accounts with the same email or 2 user accounts cannot use the same email to create accounts, they have to use unique email id's.
+
+if we use UNIQUE constraint in "email" column then user cannot create multiple accounts with the same email or 2 user accounts cannot use the same email
+to create accounts, they have to use unique email id's.
 
 Query:
 
@@ -37,11 +55,56 @@ CREATE TABLE users (
 
 CHECK constraint checks the condition of the table data that user enters.
 we need to define a condition in CHECK constraint.
+it defines that any column should be stored data acccording to the defined condition.
+any column can store data by must following the defined condition, otherwise it cannot store data.
+
+Example: 
+
+if we want to store date of birth after 1970-01-01 then we can use CHECK constraint:
+
+Query:
+
+	ALTER TABLE users ADD CONSTRAINT chk_dob CHECK (date_of_birth > '1970-01-01');
 
 4. PRIMARY KEY:
 
-"PRIMARY KEY" uniquely identifies each rows/records in a table.
-PRIMARY KEY is "not null" and "unique".
+"PRIMARY KEY" uniquely identifies each rows/records of a table.
+PRIMARY KEY must be not null and unique.
+PRIMARY KEY bydefault follows 2 conditions: "not null" and "unique".
+
+Example:
+
+if we want to create a serial no column in the table then we can use PRIMARY KEY constraint in this column.
+so that it automatically generates a unique no to every rows/records.
+
+Query:
+
+CREATE TABLE users (
+	id INT PRIMARY KEY AUTO_INCREMENT
+);
+
+5. DEFAULT:
+
+DEFAULT constraint defines/sets the default value for any column of the table.
+
+Example:
+
+if the user did not enter any value, then automatically a value will enter in that column that is called Default Value.
+
+Query:
+
+CREATE TABLE users (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(20) NOT NULL,
+	email VARCHAR(100) UNIQUE NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP	
+);
+
+Q: Why we use "_" in CURRENT_TIMESTAMP and AUTO_INCREMENT and not use in PRIMARY KEY?
+
+AUTO_INCREMENT
+TIMESTAMP
+NULL
 
 ADD Constraints In Table That Already Created:
 
