@@ -121,6 +121,42 @@ Query: SELECT id, name, gender, MONTH(date_of_birth) AS month_of_birth FROM user
 
 Query: SELECT name, DATEDIFF(CURDATE(), date_of_birth) AS days FROM users;
 
-MATHEMATICAL FUNCTION:
+13. MATHEMATICAL FUNCTION:
 
-13. 
+There are 3 mathematical functions:
+
+1. ROUND()	gives rounded no/salary
+2. FLOOR() 	gives floored salary
+3. CEIL()		gives ceiled salary
+
+to find the rounded, floored and ceiled salary from the users table:
+
+Query:	SELECT salary, ROUND(salary) AS rounded, FLOOR(salary) AS floored, CEIL(salary) AS ceiled FROM users;
+
+14. MOD: 
+
+Mod function gives you the reminder after dividing any number to any number.
+
+Query:	SELECT id, MOD(id, 2) AS reminder FROM users;
+
+15. CONDITIONAL FUNCTIONS:
+
+IF()
+
+to disable autocommit:
+
+	SET autocommit =  0;
+
+to go back to the last commit;
+
+ROLLBACK;
+
+to enable autocommit:
+
+	SET autocommit =  1;
+
+to finalize changes/save changes permanently:
+
+	COMMIT;
+
+

@@ -6,3 +6,26 @@ to summarize data of tables.
 to transform data of tables.
 to analyze data of tables.
 
+Computation Functions:
+
+MIN()
+MAX()
+SUM()
+AVG()
+GROUP BY()
+LENGTH()
+CONCAT()
+LOWER()
+NOW()
+YEAR()	DAY()	MONTH()
+DATEDIFF()
+
+Mathematical Functions:
+
+ROUND()
+FLOOR()
+CEIL()
+
+Conditional Functions:
+
+IF()
