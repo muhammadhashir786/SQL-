@@ -2,13 +2,13 @@ ADD Constraints In Table That Already Created:
 
 1. to add a UNIQUE constraint in a table that already created:
 
-Syntax: ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column_name);
+Syntax: 	ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column_name);
 
 Query: 	ALTER TABLE users ADD CONSTRAINT unique_email UNIQUE (email);
 
-Note: at "column_name" type the column name where you want to apply constraint.
+Note:	in the "column_name" type the column name of the table where you want to apply the constraint.
 
-HERE WE CHANGED IN THE STRUCTURE/TABLE/SCHEMA SO WE USE MODIFY COLUMN:
+BELOW WE CHANGED/MODIFY THE STRUCTURE/TABLE/SCHEMA SO WE USE MODIFY COLUMN KEYWORD:
 
 2. to change any column to NOT NULL:
 
