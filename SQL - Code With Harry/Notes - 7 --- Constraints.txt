@@ -1,0 +1,28 @@
+Constraints:
+
+Constraints are the rules that applied to the table columns to ensure the accuracy, validity and integrity of the 
+data.
+
+1. NOT NULL:
+
+NOT NULL constraint defines that a column cannot have NULL value.
+if we don't want to keep any column Null then we can use NOT NULL constraint.
+
+2. UNIQUE:
+
+UNIQUE constraint defines that all the values in a column are different to each other.
+if we use UNIQUE constraint in "email" column then user cannot create multiple accounts with the same email or 
+2 user accounts cannot have the same emails.
+
+3. CHECK:
+
+CHECK constraint checks the condition of the table data that user enters.
+we need to define a condition in CHECK constraint.
+
+ADD Constraints In Table That Already Created:
+
+we can add constraints in a table that already created by using "ADD CONSTRAINT" keyword in "ALTER TABLE" command.
+"PRIMARY KEY" uniquely identifies each rows/records in a table.
+
+PRIMARY KEY is not null and unique.
+

@@ -1,0 +1,51 @@
+Update Keyword (Update Data into Table):
+
+1. to update data in a single field at a specific condition:
+
+update salary "45000" in id "3":
+
+Syntax: UPDATE table_name SET define_value WHERE define condition; 
+
+Query: UPDATE users SET salary = 45000 WHERE id=3;
+
+2. to update data in single field at a specific condition:
+
+update salary "45000" and email "aarav@aarav.com" in id "1":
+
+Syntax: UPDATE table_name SET define_values WHERE define condition;
+
+Query: UPDATE users SET salary = 45000, email='aarav@aarav.com' WHERE id=1;
+
+3. to update salary "70000" where id is 5:
+
+Syntax: UPDATE table_name SET define_values WHERE define condition; 
+
+Query: UPDATE users SET salary = 70000 WHERE id=5;
+
+4. to update name "Aisha Khan" where email is "aisha@example.com":
+
+Syntax: UPDATE table_name SET define_values WHERE define condition; 
+
+Query: UPDATE users SET name='Aisha Khan' WHERE email='aisha@example.com';
+
+5. to update salary "10000" where salary is less than "60000" in the table:
+
+Syntax: UPDATE table_name SET define_values WHERE define condition; 
+
+Query: UPDATE users SET salary=salary+10000 WHERE salary<60000;
+
+6. to update gender "other" to name "Ishaan":
+
+Syntax: UPDATE table_name SET define_values WHERE define condition; 
+
+Query: UPDATE users SET gender='Other' WHERE name='Ishaan';
+
+7. to update salary '50000' for all the users in the table:
+
+This will query will run in a new script file:
+
+Syntax: UPDATE table_name SET define_values WHERE define condition; 
+
+Query: UPDATE users SET salary=50000;
+
+

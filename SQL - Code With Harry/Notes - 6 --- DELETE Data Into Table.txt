@@ -1,0 +1,20 @@
+Delete Data in Table:
+
+we can delete data from table like we update data into the table.
+
+we need to DELETE data from the table by focus, because if we do any mistake when we delete data then it will be 
+a problem.
+
+so we delete data from table by defining a specific condition with WHERE clause. 
+without any condition we don't want to delete any data from the table. 
+
+as well as we can use different types of operators with DELETE keyword. 
+
+Delete is similar to Update.
+
+to delete the table/schema use the DROP keyword.
+
+Note:
+
+before delete any data from the table, see all the records from the table and
+take the backup of all the table data before delete anything. 

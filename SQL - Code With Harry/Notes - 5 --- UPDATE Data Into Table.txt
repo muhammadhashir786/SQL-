@@ -1,0 +1,11 @@
+Update Data in Table:
+
+when we need to update data/records in the table then we use UPDATE keyword with SET keyword. 
+
+generally we use UPDATE keyword with WHERE clause, otherwise we mess all the data because UPDATE query update values in all over the table, 
+so we need to define a specific condition from where we want to update data or values.
+
+we can run UPDATE query without WHERE clause but if we do this then all the values of a column will changed.
+So we use update query very carefully.
+
+

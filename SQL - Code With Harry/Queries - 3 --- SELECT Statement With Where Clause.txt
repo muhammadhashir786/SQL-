@@ -1,0 +1,83 @@
+SELECT Statement With WHERE Clause & Different Operators:
+
+1. to show all the records from the users table:
+
+Syntax: SELECT * FROM table_name;
+
+Query: SELECT * FROM users;
+
+2. to show the records of some specific columns of the table:
+
+Syntax: SELECT 1st_column_name, 2nd_column_name FROM table_name;
+
+Query: SELECT gender, name FROM users;
+
+3. to show all the records from the table where gender is female:
+
+Syntax: SELECT * FROM table_name WHERE define_your_condition;
+
+Query: SELECT * FROM users WHERER gender='Female';
+Query: SELECT * FROM users WHERER gender='Male';
+
+4. to show all the records from the table where gender is not equal to Male:
+
+Syntax: SELECT * FROM table_name WHERE define_your_condition;
+
+Query: SELECT * FROM users WHERER gender<>'Male';
+
+	OR 
+
+Query: SELECT * FROM users WHERER gender!='Male';
+
+5. to show all the records from the table where date of birth is less than 1995-09-09:
+
+Syntax: SELECT * FROM table_name WHERE define_your_condition;
+
+Query: SELECT * FROM users WHERE date_of_birth<'1995-09-09';
+
+6. to show all the records from the table where id is equal to 10:
+
+Syntax: SELECT * FROM table_name WHERE define_your_condition;
+
+Query: SELECT * FROM users WHERE id=10;
+
+7. to show all the records from the table where id is less than equal to 10:
+
+Syntax: SELECT * FROM table_name WHERE define_your_condition;
+
+Query: SELECT * FROM users WHERE id<=10;
+
+8. to show all the records of the table where date of birth is null:
+
+Query: SELECT * FROM users WHERE date_of_birth IS NULL;
+
+9. to show all the records of the table where date of birth is not null:
+
+Query: SELECT * FROM users WHERE date_of_birth IS NOT NULL;
+
+10. to show all the records of the table where date of birth is between 1990-09-09 1999-09-09:
+
+Query: SELECT * FROM users WHERE date_of_birth BETWEEN '1990-09-09' AND '1999-09-09;
+
+11. to show all the records of the table where gender value included "Male" and "Female":
+
+Query: SELECT * FROM users WHERE gender in ('Male', 'Female');
+
+12. to show all the records from the table where gender is female and salary is greater than 70000:
+
+Query: SELECT * FROM users WHERE gender='Female' AND salary>'70000';
+Query: SELECT * FROM users WHERE gender='Male' AND salary>'70000';
+
+13. to show all the records of the table where either gender is "Male" or salary is greater than '65000' and date of birth is
+ordered by Ascending order/Descending order:
+
+Query: SELECT * FROM users WHERE gender='Male' OR salary>'65000' ORDER BY date_of_birth ASC;
+
+Query: SELECT * FROM users WHERE gender='Male' OR salary>'65000' ORDER BY date_of_birth DESC;
+
+14. to show all the records of the table where either gender is "Male" or salary is greater than '65000' with
+limit 5:
+
+Query: SELECT * FROM users WHERE gender='Male' OR salary>'65000' LIMIT 5;
+
+

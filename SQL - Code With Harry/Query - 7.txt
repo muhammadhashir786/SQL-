@@ -1,0 +1,126 @@
+Functions:
+
+1. Count:
+
+to count the no of users in the table use the COUNT function.
+
+it will give you how many no of users in the users table:
+
+Query: SELECT COUNT(*) FROM users;
+
+Use WHERE Clause:
+
+to count the no of Male users in the table:
+
+Query: SELECT COUNT(*) FROM users WHERE gender='Male';
+
+to count the no of Female users in the table:
+
+Query: SELECT COUNT(*) FROM users WHERE gender='Female';
+
+to count the no of users whose salary greater than 60000:
+
+Query: SELECT COUNT(*) FROM users WHERE salary>60000;
+
+2. Min:
+
+to find the minimun salary from the users table:
+
+Syntax: SELECT MIN(column_name) AS column_name FROM table_name;
+
+Note: Here "column_name" refers to create a new column in which it show the minimum salary and maximum salary.
+
+Query: SELECT MIN(salary) AS min_salary FROM users;
+
+3. Max:
+
+to find the maximum salary from the users table:
+
+Query: SELECT MAX(salary) AS max_salary FROM users;
+
+	OR	
+
+Query: SELECT MIN(salary) AS min_salary, MAX(salary) AS max_salary FROM users;
+
+4. Sum:
+
+to find the sum of all the salaries from the table:
+
+Syntax: SELECT SUM(column_name) AS column_name FROM table_name;	
+
+Query: SELECT SUM(salary) AS Total_salary FROM users;
+
+5. AVG:
+
+to find the average salary of all the users from the table:
+
+Syntax: SELECT AVG(column_name) AS column_name FROM table_name;	
+
+Query: SELECT AVG(salary) AS AVG_salary FROM users;
+
+6. GROUP BY:
+
+to find the sum of all the salaries of male and female in 2 different columns in the table:
+
+Query: SELECT gender, SUM(salary) AS sum_salary FROM users GROUP BY gender;
+
+it will give you the sum of all the salaries in 2 different columns of male and female.
+
+to find the average of all the salaries of male and female in 2 different columns in the table:
+
+Query: SELECT gender, AVG(salary) AS avg_salary FROM users GROUP BY gender;
+
+it will give you the average of all the salaries in 2 different columns of male and female.
+
+7. LENGTH:
+
+to find the length of all the user names use the LENGTH function:
+
+Query: SELECT id, gender, name, LENGTH(name) AS name_length FROM users;
+
+to convert the names of users in lowercase from table:
+
+Query: SELECT id, gender, LOWER(name) AS lower_name, LENGTH(name) AS name_length FROM users;
+
+7. CONCAT:
+
+to create a username column and concat string in names of user:
+
+Query: SELECT id, gender, name, CONCAT(LOWER(name), "2245") AS username;
+Query: SELECT id, gender, LOWER(name) AS lower_name, CONCAT(LOWER(name), "2245") AS username, LENGTH(name) AS name_length FROM users;
+
+8. TIME:
+
+to create a new column which shows current time:
+
+Query: SELECT id, name, gender, NOW() AS time FROM users;
+
+9. YEAR:
+
+to create a new column that shows current year:
+
+Query: SELECT id, name, gender, YEAR(NOW()) AS year FROM users;
+
+to create a new column that shows year of date of birth of all the users;
+
+Query: SELECT id, name, gender, YEAR(date_of_birth) AS year_of_birth FROM users;
+
+10. DAY:
+
+to create a new column that shows day of date of birth of all the users;
+
+Query: SELECT id, name, gender, DAY(date_of_birth) AS day_of_birth FROM users;
+
+11. MONTH:
+
+to create a new column that shows month of date of birth of all the users;
+
+Query: SELECT id, name, gender, MONTH(date_of_birth) AS month_of_birth FROM users;
+
+12. to find the no of days a user lived life:
+
+Query: SELECT name, DATEDIFF(CURDATE(), date_of_birth) AS days FROM users;
+
+MATHEMATICAL FUNCTION:
+
+13. 

@@ -1,0 +1,8 @@
+Functions:
+
+functions are used to computations.
+to create a new field in the output. 
+to summarize data of tables.
+to transform data of tables.
+to analyze data of tables.
+

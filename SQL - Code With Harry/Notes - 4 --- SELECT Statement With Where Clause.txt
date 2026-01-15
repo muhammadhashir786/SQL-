@@ -1,0 +1,30 @@
+Select Statement with WHERE Clause & Other Operators & Keywords:
+
+we can use SELECT with or without WHERE clause. 
+if we use WHERE clause then we need to define condition that which types of record do we want to see.
+
+to select records less than or greater than any number then we use "<" or ">" operator.
+to select records which is equal to something or any number then we use "=" operator.
+to select records which is less than equal to or greater than equal to something or any number then we use "<=" or ">=" operator.
+to select records which is not equal to something or any number then we use "!=" or "<>" operator.
+
+to select records from the table which is null then we "NULL" keyword.
+to select records from the table which is not null then we "NOT NULL" keyword.
+
+to select records from the table that defines a specfic range then we use "BETWEEN" keyword.
+to select records from the table that values included from your given values then we use "in" keyword and define 
+values under brackets "()".
+
+to select records from the table where both conditions must be true then we use "AND" operator.
+to select records from the table where either 1 condition can be true from both conditions then we use "OR" operator.
+
+to select records from the table where any record is ordered by ascending order or descending order then we use 
+"ORDER BY" keyword with "ASC/DESC" keyword. 
+
+to select records from the table with any limit then we use "LIMIT" keyword.
+
+
+
+
+
+

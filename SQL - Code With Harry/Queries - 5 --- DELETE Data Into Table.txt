@@ -1,0 +1,32 @@
+DELETE Keyword (Delete Data into Table):
+
+1. to delete all the users from the table whose salary is less than 55000:
+
+Syntax: DELETE FROM table_name WHERE define_condition;
+
+Query: DELETE FROM users WHERE salary<55000;
+
+2. to delete a specific user whose id is 3:
+
+Syntax: DELETE FROM table_name WHERE define_condition;
+
+Query: DELETE FROM users WHERE id=3;
+
+3. to delete all the data from the table:
+
+Syntax: DELETE FROM table_name;
+
+Query: DELETE FROM users;
+
+4. if we want to delete the whole table/schema from database:
+
+Syntax: DROP TABLE table_name;
+
+Query: DROP TABLE users;
+
+5. to delete users whose salary is null:
+
+Syntax: DELETE FROM table_name WHERE define_condition;
+
+Query: DELETE FROM users WHERE salary IS NULL;
+

@@ -45,6 +45,7 @@ write Queries in the white area and then run it by clicking on the flash icon.
 What is SQL:
 
 SQL is all about writing efficient Queries and writing Queries that solves a problem. 
+we can see the output of multiple statements in different tabs. 
 
 Importance of Database:
 

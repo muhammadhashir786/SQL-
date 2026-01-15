@@ -101,6 +101,8 @@ Syntax:	SELECT * FROM table_name;
 
 Query: SELECT * FROM users;
 
+it means to show all the records from the users table.
+
 11. to select one or more specific columns from the table:
 
 Syntax:	SELECT 1st_column_name, 2nd_column_name FROM table_name;
