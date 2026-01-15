@@ -1,0 +1,81 @@
+Topics:
+
+1. Datatypes
+2. Constraints
+3. Create Table
+4. Rename Table
+5. Alter/Modify Table
+   Uses of Alter Table Command:
+
+
+Datatypes & Constraints:
+
+1. Datatypes:
+
+datatype defines the type of the data that stored in the column of table.
+we can write datatype after the column name of table.
+
+INT		used to store/define the intergers and whole numbers.
+VARCHAR(100)	used to store/defines the string characters, the no "100" defines the variable-length of string character up to maximum 100 characters
+		and it stores the limit of maximum 100 variable-length of string character .
+ENUM('', ...)	used to select values from a given list of values. 
+		A string object with a value chosen from a list of permitted values. 
+		it is like a radio button in HTML but here we can select multiple values or all the values from given values. 
+		eg:	gender ENUM('Male', 'Female', 'Other')
+DATE 		used to store date values. 
+		eg:	date_of_birth DATE
+TIMESTAMP	defines date and time, automatically set to the current timestamp when a row is created. 
+BOOLEAN 	defines TRUE or FALSE values, often used for flags like is_active.
+DECIMAL(10, 2)	Stores exact numeric data values, useful for financial data. 
+		The first number is the total number of digits.
+		Second is the number of digits after the decimal point.
+
+2. Constraints:
+
+Constraints are the rules that applied to the column of the table.
+constraints filter the data that is stored in the table.
+
+AUTO_INCREMENT	Automatically generates a unique number for each row.
+PRIMARY KEY 	uniquely identifies each row in the table.
+		cannot be null and duplicated like a roll no of student in the class, people NIC Card no, vehicles no plate, peoples phone number, etc.
+		bydefault it is null and unique itself.
+NOT NULL	ensures that a column cannot have a NULL value.
+		we cannot keep any column with empty value.
+UNIQUE 		ensures that all the values in a column are different and unique.
+DEFAULT		defines a default value for a column, if no value is provided.
+		Examples:
+		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+		is_active BOOLEAN DEFAULT TRUE
+
+3. Create Table:
+
+if we want to create a new table then we can use CREATE TABLE command.
+
+4. Rename Table:
+
+if we want to rename table then we can use the keyword RENAME TABLE.
+
+5. Alter Table:
+
+if we want to alter, change or modify the existing/created table/structure/schema, then we can use ALTER TABLE command.
+
+Uses of Alter Table Command:
+
+1. add new column:
+	to add a new column in the table, use keyword ADD COLUMN with ALTER TABLE and follow the syntax.
+
+2. delete any column: 
+	to delete any column from the table, use keyword DROP COLUMN with ALTER TABLE and follow the syntax.
+
+3. change/modify the variable-length of string character:
+	to change/modify the variable-length of string character of any column of the table, use Keyword MODIFY COLUMN with ALTER TABLE and follow the syntax.
+
+4. move the position of any column:
+	to move the position of any column of the table, use the keyword MODIFY COLUMN with ALTER TABLE and follow the syntax.
+	to move the position of any column after any column, use the keyword AFTER with MODIFY COLUMN along with ALTER TABLE and follow the syntax.
+	to move the position of any column to the first, use the keyword FIRST with MODIFY COLUMN along with ALTER TABLE and follow the syntax.
+
+5. change column name of the table
+
+Q: How to change the column name of the table?
+

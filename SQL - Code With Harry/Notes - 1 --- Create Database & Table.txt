@@ -1,5 +1,6 @@
 Topics:
 
+MySQL workbench
 Database 
 Query 
 SQL 
@@ -20,6 +21,12 @@ Rules OF SQL/My SQL server
 
 Notes Starts Here!
 
+MySQL workbench:
+
+MySQL Workbench is a visual tool for database architects, developers, and DBAs.
+It provides data modeling, SQL development, and comprehensive administration
+tools for server configuration, user administration, backup, and much more
+
 Database:
 
 a database is a way to store data in a format which makes it easily accessible. 
@@ -29,6 +36,22 @@ but long data can not be stored in the form of files, folders and in excel.
 we use database to access data in a particular format/pattern/serial or any order. 
 files or folders m store kia huwa data is trah se access nhi kia ja sakta, hamen khud se manually krna parega
 ye sara kaam, jo database kuch queries ki help se kar deta hai.
+
+A database is a container that stores related data in an organized way. In MySQL, a
+database holds one or more tables.
+
+Think of it like:
+
+Folder analogy:
+
+A database is like a folder.
+Each table is a file inside that folder.
+The rows in the table are like the content inside each file.
+Excel analogy:
+
+A database is like an Excel workbook.
+Each table is a separate sheet inside that workbook.
+Each row in the table is like a row in Excel.
 
 What is Query?
 
@@ -81,6 +104,12 @@ some other examples are:
 postgreSQL
 MS SQL
 MySQL 
+
+A Database Management System (DBMS) is software that interacts with end users,
+applications, and the database itself to capture and analyze data. It allows for the
+creation, retrieval, updating, and management of data in databases. If you know
+one DBMS, you can easily transition to another, as they share similar concepts and
+functionalities.
 
 D/F B/W Relational DBMS and Non-Relational DBMS:
 
@@ -147,8 +176,8 @@ we can write underscore "_" instead of space.
 Q1: How to create a database?
 
 create a database named "startersql" by writing a Query.
-after that run the Query by clicking on the yellow flash icon.
-then we will see the text below: "1 row affected".
+after that run the Query by clicking on the yellow flash icon from the top.
+then we will see the text below: "1/0 row affected".
 after that click on the refresh icon on the left side bar named "Schemas".
 then here, we will see a database named "startersql".
 
@@ -158,18 +187,29 @@ then select this database to work on it.
 
 Q2: How to select database to work on it after creating database?
 
-we can also switch database between work but ideally we cannot do like this.
+After creating the database, either:
+
+Right-click it in MySQL Workbench and select “Set as Default Schema”.
+	OR
+type the Query to select the database to work on it.
+
+we can also switch databases between work but ideally we cannot do like this.
 we select 1 database and then work on it.
 after that we will see the text below: "0 rows affected".
 
 3. Create Table:
 
-after that create a table.
+after selecting database, create a table.
 
-Q3: How to create a table in a database?
+Q3: How to create a table in the database and define the structure of the table?
 
-we can write constraints after datatype in the table.
-we can write constraints as many as we want. 
+we can create a table by writing a Query.
+after that we need to define the structure of the table.
+first we create the structure of a table like table name, table columns, column names, etc.
+then we need to define datatypes for every column of the table after column name.
+then write constraints after datatype in the table where needed.
+
+Note:	we can write constraints as many as we want. 
 
 what are datatypes?
 what are constraints?
@@ -177,7 +217,7 @@ above 2 topics include in notes 2
 
 4. Check the Data of the table:
 
-Q4: after creating the table, how to see/check the data/structure of the table?
+Q4: after creating the table, how to see/check the records/data/structure of the table?
 
 we can see/check the data or structure of the table by using SELECT statement.
 
@@ -185,6 +225,7 @@ we can see/check the data or structure of the table by using SELECT statement.
 
 Drop database means delete the complete database along with all the tables and their data that created and stored in that database.
 Drop table means delete the table along with data that is stored in that table.
+we can delete the database and table by writing a Query.
 
 Q5: How to delete the table?
 Q6: How to delete the database?
@@ -193,8 +234,9 @@ above 2 topics included in Queries 1
 
 6. Write an Script Program and Save this Script in file:
 
-when we create a SQL script by writing many Queries, we can save this script in the file. 
-and when we need this SQL script, we just open this script file and run it.
+a SQL script will be created by writing some lines of Queries.
+when we create a SQL script by writing many Queries, we can save this script in a file. 
+and when we need this SQL script, we just open this script file and run it once.
 
 Q7: How to save the SQL script in the file?
 
@@ -205,15 +247,22 @@ give the name to the file
 choose your location where you want to save
 click ok 
 
+Short:
+
+create a SQL script
+press ctrl + s
+give name to this file
+select location, click save.
+
 Q8: What is a comment?
 
 SQL ignores those lines or Queries that will be commented.
 
 we can write notes using comments.
-if we don't want to run any query we can do comment.
+if we don't want to run any query, we can comment it.
 
 press ctrl + / to comment or uncomment.
-type -- at the start of any line to comment or remove this to uncomment.
+type double dashes "--" at the start of any line to comment and remove this to uncomment.
 
 
 

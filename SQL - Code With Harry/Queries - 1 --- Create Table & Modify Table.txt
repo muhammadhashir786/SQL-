@@ -39,45 +39,58 @@ CREATE TABLE users (
 	name VARCHAR(100) NOT NULL, 
 	email VARCHAR(100) UNIQUE NOT NULL, 
 	gender ENUM('Male', 'Female', 'Other'),
-	date_of_birth DATE, 
+	date_of_birth DATE NOT NULL, 
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 Here, PRIMARY KEY and NOT NULL constraint included space.
 after run the above Query, 0 rows affected.
 
-Q: Here, what is current in the "CURRENT_TIMESTAMP"?
+Question: Here, what is "current" in the "CURRENT_TIMESTAMP"?
 
 5. to see/check the structure/data of the table:
+   to select all the columns of the table:
+   to show all the records of the table:
 
 Syntax:	SELECT * FROM table_name;
 
-Query: SELECT * FROM users;
+Query: 	SELECT * FROM users;
 
-Here * means all.
+Here * means all, means all the column of the table.
 the above Query will show you the structure or data of all the columns of table.
+it means to show all the records from the users table.
+This fetches every column and every row from the users table.
 
 6. to select one or more specific columns of the table:
+   to show some specific records of the table:
 
 Syntax:	SELECT first column_name, 2nd column_name, ... FROM table_name;
 
-Query: SELECT id, email FROM users;
+Query:	SELECT id, name, email FROM users;	OR 
+Query:	SELECT email, name, id FROM users;
 
-we can write column name in any order. 
+This only fetches the id, name and email columns from all rows of the table.
+
+Note:	Here we can change the order of the column name in SELECT Statement.
+	we can write column name in any order.
 
 7. to delete the table:
 
 Syntax:	DROP TABLE table_name;
 
-Query: DROP TABLE users;
+Query:	DROP TABLE users;
+
+Note:	above query will delete the complete table along with all the data stored in that table.
 
 8. to delete the database:
 
 Syntax:	DROP DATABASE database_name;
 
-Query: DROP DATABASE startersql;
+Query: 	DROP DATABASE startersql;
 
-9. SQL Script that creates a database, select this database, create a table in it and select all the columns of the table:
+Note:	Be careful — above Query will delete everything in that database.
+
+9. SQL Script that creates a database startersql, select this database, create a table in it and select all the columns of the table:
 
 Query: 
 
@@ -88,36 +101,22 @@ Query:
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(100) NOT NULL, 
 	email VARCHAR(100) UNIQUE NOT NULL, 
-	gender ENUM('Male', 'Female', 'Other'),
-	date_of_birth DATE, 
+	gender ENUM('Male', 'Female', 'Other') NOT NULL,
+	date_of_birth DATE NOT NULL, 
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
     SELECT * FROM users;
 
-10. to select all the columns of the table:
-
-Syntax:	SELECT * FROM table_name;
-
-Query: SELECT * FROM users;
-
-it means to show all the records from the users table.
-
-11. to select one or more specific columns from the table:
-
-Syntax:	SELECT 1st_column_name, 2nd_column_name FROM table_name;
-
-Query: SELECT id, email FROM users;
-
-Here we can change the order of the column in SELECT Statement.
-
-12. to rename table users to programmers:
+10. to rename an existing table users to programmers:
 
 Syntax:	RENAME TABLE current_table_name TO new_table_name;
 
-Query: RENAME TABLE users TO programmers;
+Query:	RENAME TABLE users TO programmers;
 
-13. to add a new column in the table:
+we can rename table back to this query.
+
+11. to add a new column in the table:
 
 Syntax: ALTER TABLE table_name ADD COLUMN column_name datatype constraint;
 
@@ -129,27 +128,38 @@ Syntax: ALTER TABLE table_name DROP COLUMN column_name;
 
 Query: ALTER TABLE users DROP COLUMN is_active;
 
-15. to change the string character length of any column of the table:
+15. to change/modify the variable-length of string character of any column of the table:
 
-Syntax: ALTER TABLE table_name MODIFY COLUMN column_name define_datatype_with_length
+Syntax: ALTER TABLE table_name MODIFY COLUMN column_name define_datatype_with_length;
 
-Query: ALTER TABLE users MODIFY COLUMN name VARCHAR(150)
+Query: ALTER TABLE users MODIFY COLUMN name VARCHAR(150);
 
-Here we changed the string character length of name column from 100 to 150.
+Here we changed the variable-length of string character of "name" column from 100 to 150.
 
-16. to move the position of any column of the table:
+16. to move the position of any column of the table after another column:
+
+eg: move email after id.
 
 Syntax: ALTER TABLE table_name MODIFY COLUMN column_name datatype AFTER column_name;
 
-Query: ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+Query: 	ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
 
-Here we moved the column email to after id.
+Here we moved the "email" column to after "id" column.
+
+(e.g., move gender after name ):
+
+Query: 	ALTER TABLE users MODIFY COLUMN gender ENUM('Male', 'Female', 'Other') AFTER name;
 
 17. to move any column to first position in the table:
 
+eg: move date of birth to first position
+
 Syntax: ALTER TABLE table_name MODIFY COLUMN column_name datatype FIRST;
 
-Query: ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
+Query: 	ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
 
 Here we moved the column date of birth to the first position in the table.
 
+To move a column (e.g., email to the first position) :
+
+Query: 	ALTER TABLE users MODIFY COLUMN email VARCHAR(100) FIRST;
