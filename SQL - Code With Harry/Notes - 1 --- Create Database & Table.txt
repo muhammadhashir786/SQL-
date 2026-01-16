@@ -1,4 +1,4 @@
-Topics:
+TOPICS:
 
 MySQL workbench
 Database 
@@ -13,8 +13,8 @@ Rules OF SQL/My SQL server
 1. Create Database
 2. Select Database
 3. Create Table
-4. Check the Data of the table
-5. Delete Database and DELETE Table
+4. Check data of the table
+5. Delete Database and Delete Table
 6. Write an Script Program and Save this Script in file
 7. How to save the script in fie?
 8. Comment

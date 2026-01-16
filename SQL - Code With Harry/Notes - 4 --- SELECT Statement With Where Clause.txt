@@ -1,30 +1,126 @@
-Select Statement with WHERE Clause & Other Operators & Keywords:
+Querying Data In MySQL Using Select Statement :
 
-we can use SELECT with or without WHERE clause. 
-if we use WHERE clause then we need to define condition that which types of record do we want to see.
+Select Statement with WHERE Clause, Other Operators & Keywords:
 
-to select records less than or greater than any number then we use "<" or ">" operator.
-to select records which is equal to something or any number then we use "=" operator.
-to select records which is less than equal to or greater than equal to something or any number then we use "<=" or ">=" operator.
-to select records which is not equal to something or any number then we use "!=" or "<>" operator.
+The SELECT statement is used to query data from a table.
+we can use SELECT statement with or without WHERE clause.
+if we use WHERE clause, we need to define a specific condition, that which types of records do we want to see.
+we can filter records/rows with WHERE clause.
 
-to select records from the table which is null then we "NULL" keyword.
-to select records from the table which is not null then we "NOT NULL" keyword.
+a) Basic Syntax:
 
-to select records from the table that defines a specfic range then we use "BETWEEN" keyword.
-to select records from the table that values included from your given values then we use "in" keyword and define 
-values under brackets "()".
+1. select all the records/columns of the table.
+	SELECT * FROM users;
 
-to select records from the table where both conditions must be true then we use "AND" operator.
-to select records from the table where either 1 condition can be true from both conditions then we use "OR" operator.
+2. select some specific records/columns of the table.
+	SELECT column1, column2 FROM table_name;
 
-to select records from the table where any record is ordered by ascending order or descending order then we use 
-"ORDER BY" keyword with "ASC/DESC" keyword. 
+b) Filtering Rows With WHERE:
 
-to select records from the table with any limit then we use "LIMIT" keyword.
+1. Equal to:
+	to select records which is equal to something or any number, then we use "=" operator.
+		SELECT * FROM users WHERE gender = 'Male';
 
+2. Not Equal to:
+	to select records which is not equal to something or any number, then we use "!=" or "<>" operator.
+		SELECT * FROM users WHERE gender != 'Female';	OR
+		SELECT * FROM users WHERE gender <> 'Female';
 
+3. Greater Than/Less Than:
+	to select records which are less than or greater than any number, then we use "<" or ">" operator.
+		SELECT * FROM users WHERE date_of_birth < '1995-01-01';
+		SELECT * FROM users WHERE id > 10;
 
+4. Greater Than or Equal / Less Than or Equal:
+	to select records which are less than or equal to and greater than or equal to something or any number, then we use "<=" or ">=" operator.
+		SELECT * FROM users WHERE id >= 5;
+		SELECT * FROM users WHERE id <= 20;
 
+5. Null:
+	to select records which are null, then we "NULL" keyword.
+		SELECT * FROM users WHERE date_of_birth IS NULL;
 
+5. Not Null:
+	to select records which are not null, then we use "NOT NULL" keyword.
+		SELECT * FROM users WHERE date_of_birth IS NOT NULL;
+
+6. Between:
+	to select records from the table that defines a specfic range, then we use "BETWEEN" keyword.	OR
+	to select records from the table that are placed in between something or any number then we use "BETWEEN" keyword.
+	AND operator is used in BETWEEN keyword.
+
+		SELECT * FROM users WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
+
+7. In:
+	to select records from the table that includes values from given values in the table, then we use "in" keyword and define values under brackets "()".
+		SELECT * FROM users WHERE gender IN ('Male', 'Other');
+
+8. Like:
+        Like defines pattern matching conditions.
+        we use LIKE when we need a similar pattern in the records.
+
+	to select records from table where name starts with "A":
+		SELECT * FROM users WHERE name LIKE 'A%'; 
+
+	to select records from table where name ends with "a":
+		SELECT * FROM users WHERE name LIKE '%a'; 
+
+	to select records from table where name contains letter "sh" anywhere in the name:
+		SELECT * FROM users WHERE name LIKE '%li%'; 
+
+9. AND Operator:
+        There are 2 conditions in AND operator.
+        We use AND operator when both conditions must be true, otherwise it will not run.
+
+	to select records from the table where both conditions must be true then we use "AND" operator.
+		SELECT * FROM users WHERE gender = 'Female' AND date_of_birth > '1990-01-01';
+
+10. OR Operator:
+        There are 2 conditions in OR operator same as AND operator.
+        But here either 1 condition can be true from both conditions
+        if 1 condition will be true then it will run.
+        1 condition must be true from both conditions in OR operator.
+
+	to select records from the table where either 1 condition can be true from both conditions, then we use "OR" operator.
+		SELECT * FROM users WHERE gender = 'Male' OR gender = 'Other';
+
+11. Order By:
+        it shows data in ascending or descending order that you specify.
+        we use ASC or DESC keyword for ascending or descending order with ORDER BY command.
+        WHERE clause is not necessary with ORDER BY keyword.
+        But we can use ORDER BY with WHERE clause.
+
+        to select records from the table where any record is ordered by ascending order or descending order, then we use "ORDER BY" keyword with "ASC/DESC" keyword.
+
+	select all the records from the table where date of birth is order by ascending order:
+		SELECT * FROM users ORDER BY date_of_birth ASC;
+
+	select all the records from the table where name is order by descending order:
+		SELECT * FROM users ORDER BY name DESC;
+
+12. LIMIT:
+        to select records from the table with any limit, then we use "LIMIT" keyword.	
+
+	to select top 5 records from the table:
+		SELECT * FROM users LIMIT 5; 
+
+	to select records skip first 5 rows, then get next 10 from table:
+		SELECT * FROM users LIMIT 10 OFFSET 5; 
+
+	to select 10 rows starting from the 6th row: 
+		SELECT * FROM users LIMIT 5, 10; 
+
+	to select all the records which have timestamp in descending order with limit 10:
+		SELECT * FROM users ORDER BY created_at DESC LIMIT 10;
+
+Quiz:
+
+	to select 5 records from the table that have salary greater than 60000 and timestamp is in descending order.
+		SELECT * FROM users WHERE salary > 60000 ORDER BY created_at DESC LIMIT 5;
+
+	to select all the records from the table and salary is in descending order:
+		SELECT * FROM users ORDER BY salary DESC;
+
+	to select all the records from the table that have salary is in between 50000 - 70000:
+		SELECT * FROM users WHERE salary BETWEEN 50000 AND 70000;
 
