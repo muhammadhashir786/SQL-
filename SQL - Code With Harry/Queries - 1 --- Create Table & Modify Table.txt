@@ -1,4 +1,4 @@
-Create Schema and Modify it:
+Create Schema/Table and Modify it:
 
 1. to create a database:
 
@@ -48,8 +48,13 @@ after run the above Query, 0 rows affected.
 
 Question: Here, what is "current" in the "CURRENT_TIMESTAMP"?
 
-5. to see/check the structure/data of the table:
-   to select all the columns of the table:
+5. to see the structure of the schema/table:
+
+Syntax: DESC TABLE table_name;
+
+Query:	DESC TABLE users;
+
+6. to select all the columns of the table:
    to show all the records of the table:
 
 Syntax:	SELECT * FROM table_name;
@@ -61,9 +66,8 @@ the above Query will show you the structure or data of all the columns of table.
 it means to show all the records from the users table.
 This fetches every column and every row from the users table.
 
-6. to select one or more specific columns of the table:
-   to show some specific records of the table:
-
+7. to select one or more specific columns of the table:
+   
 Syntax:	SELECT first column_name, 2nd column_name, ... FROM table_name;
 
 Query:	SELECT id, name, email FROM users;	OR 
@@ -74,7 +78,7 @@ This only fetches the id, name and email columns from all rows of the table.
 Note:	Here we can change the order of the column name in SELECT Statement.
 	we can write column name in any order.
 
-7. to delete the table:
+8. to delete the table:
 
 Syntax:	DROP TABLE table_name;
 
@@ -82,7 +86,7 @@ Query:	DROP TABLE users;
 
 Note:	above query will delete the complete table along with all the data stored in that table.
 
-8. to delete the database:
+9. to delete the database:
 
 Syntax:	DROP DATABASE database_name;
 
@@ -90,7 +94,7 @@ Query: 	DROP DATABASE startersql;
 
 Note:	Be careful — above Query will delete everything in that database.
 
-9. SQL Script that creates a database startersql, select this database, create a table in it and select all the columns of the table:
+10. SQL Script that creates a database startersql, select this database, create a table in it and select all the columns of the table:
 
 Query: 
 
@@ -108,35 +112,35 @@ Query:
 
     SELECT * FROM users;
 
-10. to rename an existing table users to programmers:
+11. to rename an existing table users to programmers:
 
 Syntax:	RENAME TABLE current_table_name TO new_table_name;
 
 Query:	RENAME TABLE users TO programmers;
 
-we can rename table back to this query.
+By using the above query, we can rename the table back to the previous name.
 
-11. to add a new column in the table:
+12. to add a new column in the table:
 
 Syntax: ALTER TABLE table_name ADD COLUMN column_name datatype constraint;
 
-Query: ALTER TABLE users ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
+Query:	ALTER TABLE users ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
 
-14. to delete any column of the table:
+13. to delete any column of the table:
 
 Syntax: ALTER TABLE table_name DROP COLUMN column_name;
 
-Query: ALTER TABLE users DROP COLUMN is_active;
+Query:	ALTER TABLE users DROP COLUMN is_active;
 
-15. to change/modify the variable-length of string character of any column of the table:
+14. to change/modify the variable-length of string character of any column of the table:
 
 Syntax: ALTER TABLE table_name MODIFY COLUMN column_name define_datatype_with_length;
 
-Query: ALTER TABLE users MODIFY COLUMN name VARCHAR(150);
+Query:	ALTER TABLE users MODIFY COLUMN name VARCHAR(150);
 
 Here we changed the variable-length of string character of "name" column from 100 to 150.
 
-16. to move the position of any column of the table after another column:
+15. to move the position of any column of the table after another column:
 
 eg: move email after id.
 
@@ -150,15 +154,13 @@ Here we moved the "email" column to after "id" column.
 
 Query: 	ALTER TABLE users MODIFY COLUMN gender ENUM('Male', 'Female', 'Other') AFTER name;
 
-17. to move any column to first position in the table:
+16. to move any column to first position in the table:
 
 eg: move date of birth to first position
 
 Syntax: ALTER TABLE table_name MODIFY COLUMN column_name datatype FIRST;
 
 Query: 	ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
-
-Here we moved the column date of birth to the first position in the table.
 
 To move a column (e.g., email to the first position) :
 

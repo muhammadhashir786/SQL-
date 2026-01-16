@@ -7,7 +7,6 @@ Topics:
 5. Alter/Modify Table
    Uses of Alter Table Command:
 
-
 Datatypes & Constraints:
 
 1. Datatypes:
@@ -28,7 +27,7 @@ TIMESTAMP	defines date and time, automatically set to the current timestamp when
 BOOLEAN 	defines TRUE or FALSE values, often used for flags like is_active.
 DECIMAL(10, 2)	Stores exact numeric data values, useful for financial data. 
 		The first number is the total number of digits.
-		Second is the number of digits after the decimal point.
+		The second number is the number of digits after the decimal point.
 
 2. Constraints:
 
@@ -46,6 +45,9 @@ DEFAULT		defines a default value for a column, if no value is provided.
 		Examples:
 		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		is_active BOOLEAN DEFAULT TRUE
+
+Q: Why AUTO_INCREMENT and CURRENT_TIMESTAMP contains "_" character instead of space?
+Q: Why PRIMARY KEY contain space and does not contain "_"?
 
 3. Create Table:
 
@@ -67,15 +69,22 @@ Uses of Alter Table Command:
 2. delete any column: 
 	to delete any column from the table, use keyword DROP COLUMN with ALTER TABLE and follow the syntax.
 
-3. change/modify the variable-length of string character:
+3. change/modify the datatype of any column:
+	to change/modify the datatype of any column, use the keyword MODIFY COLUMN with ALTER TABLE command and follow the syntax.
+
+4. change/modify the variable-length of string character:
 	to change/modify the variable-length of string character of any column of the table, use Keyword MODIFY COLUMN with ALTER TABLE and follow the syntax.
 
-4. move the position of any column:
+5. move the position of any column:
 	to move the position of any column of the table, use the keyword MODIFY COLUMN with ALTER TABLE and follow the syntax.
 	to move the position of any column after any column, use the keyword AFTER with MODIFY COLUMN along with ALTER TABLE and follow the syntax.
 	to move the position of any column to the first, use the keyword FIRST with MODIFY COLUMN along with ALTER TABLE and follow the syntax.
 
-5. change column name of the table
+6. change column name of the table
+	to change/modify the name of any column, use the keyword MODIFY COLUMN with ALTER TABLE command and follow the syntax.
 
-Q: How to change the column name of the table?
+
+Questions:
+
+Q: How to change the name of any column of the table?
 

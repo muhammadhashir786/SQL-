@@ -1,10 +1,58 @@
 Insert Data Into Table:
 
-to insert data into table, use the INSERT INTO command.
-to insert data into specific column of the table, type the name of the column in which you want to insert data.
+to add/insert/store data into table, we use "INSERT INTO" statement.
 
-we can insert data into columns by 1 row.
-but it is recommended to insert data into multiple rows at once, it saves time and increase productivity.
+1. Ways To Insert Data Into Table:
 
-Q: How to delete any row of the table?
+There are 4 ways to insert data into the table:
+
+1. Insert Data Into All Columns of 1 Row At a Time (Full Row Insert Without Specifying Column Names):
+
+	insert data without specifying column names means full row insert.
+	This method requires you to provide values for all columns in order, except columns with default values or AUTO_INCREMENT.
+
+2. Insert Data Into Specific Columns At a Time (For 1 Row):
+
+	we can only insert data into specific columns of 1 row using this method.
+	insert data with specifying column names of the table, means insert data not into the full row, instead of this, insert data into some specific
+	columns of the table.
+	This method does not require you to provide values for all columns.
+	This method is safer and more readable.
+
+3. Insert Data By 1 Row At a Time:
+
+	means insert only 1 row at a time.
+
+4. Insert Data Into Multiple Rows At Once:
+
+	insert all the data at once into the table means insert data into multiple rows at once.
+	This is more efficient than inserting rows one by one.
+
+Note: it is recommended to insert multiple rows at once by typing the column names means insert all the data at once into the table with column names,
+      it saves time and increase productivity.
+
+2. How To Insert Data Into Table:
+
+to insert data into specific columns of the table:
+	type the "names of the column" in which you want to insert data into table using INSERT INTO statement, and follow the syntax of insert data.
+
+to insert data into multiple rows of the table:
+	insert 2nd row after the 1st row in the table.
+
+Bst Pratise:
+
+Insert data into the table by specify column names in multiple rows at once.
+
+Questions:
+
+Q: How to insert data into full row?	OR
+   How to insert data into all the columns of the table?    	OR
+   How to insert data without specifying column names?
+
+Q: How to insert data into the specific columns of the table?	OR
+   How to insert data into table with specifying column names?
+
+Q: How to insert data into the table by 1 row at a time?    	OR
+   How to insert data into the table by multiple rows at once?
+
 
