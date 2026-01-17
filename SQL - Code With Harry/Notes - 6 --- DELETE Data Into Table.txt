@@ -1,20 +1,76 @@
-Delete Data in Table:
+Delete/Remove Data From Table:
 
-we can delete data from table like we update data into the table.
-
-we need to DELETE data from the table by focus, because if we do any mistake when we delete data then it will be 
-a problem.
-
-so we delete data from table by defining a specific condition with WHERE clause. 
-without any condition we don't want to delete any data from the table. 
-
-as well as we can use different types of operators with DELETE keyword. 
-
+The DELETE statement removes rows from a table.
+we can delete rows of table using DELETE statement.
+we can delete data from table using DELETE statement like we update data into the table using UPDATE statement.
 Delete is similar to Update.
 
-to delete the table/schema use the DROP keyword.
+Use WHERE Clause:
+
+we need to DELETE data from the table by focus and carefully, because if we do any mistake when we delete data then it will be 
+a problem.
+so that's why we use WHERE clause with DELETE statement to delele rows with a specific condition.
+without any condition we don't want to delete any data from the table otherwise it will delete all the data/rows from the table. 
+
+Use Operators:
+
+we can use different types of operators with DELETE statement like UPDATE statement.
+
+to delete the complete table/schema, use the DROP keyword.
 
 Note:
 
 before delete any data from the table, see all the records from the table and
 take the backup of all the table data before delete anything. 
+
+Syntax:
+
+	DELETE FROM table_name
+	WHERE define_condition;
+
+1. Delete One Row:
+
+to delete row where id = 3:
+
+	DELETE FROM users WHERE id = 3;
+
+2. Delete Multiple Rows:
+
+to delete rows where gender is other:
+
+	DELETE FROM users WHERE gender='Other';
+
+3. Delete All Rows (but keep table structure):
+
+to delete all the rows/data from the table:
+
+	DELETE FROM users;
+
+4. Drop the Entire Table (use with caution):
+
+to delete the entire table along with all the data use the keyword "DROP":
+
+	DROP TABLE users;
+
+Best Practise:
+
+Always use WHERE unless you’re intentionally updating/deleting everything.
+
+Consider running a SELECT with the same WHERE clause first to confirm what will be affected:
+
+	SELECT * FROM users WHERE id = 3;
+
+Always back up important data before performing destructive operations.
+
+Quiz:
+
+to delete all the users whose salary less than 50000:
+
+	DELETE FROM users WHERE salary < 50000;
+
+to delete all the users whose salary is Null:
+
+	DELETE FROM users WHERE salary IS NULL;
+
+
+

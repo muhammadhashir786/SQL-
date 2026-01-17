@@ -1,11 +1,62 @@
-Update Data in Table:
+Update Data into Table - (Modifying Existing Data):
 
-when we need to update data/records in the table then we use UPDATE keyword with SET keyword. 
+The UPDATE statement is used to change/update/modify values in one or more rows.
+when we need to update data/records in the table then we use UPDATE statement with SET keyword.
 
-generally we use UPDATE keyword with WHERE clause, otherwise we mess all the data because UPDATE query update values in all over the table, 
-so we need to define a specific condition from where we want to update data or values.
+Syntax:
+	UPDATE table_name 
+	SET column1 = value1, column2 = value2, ...
+	WHERE define_condition;
+
+Note:
+
+generally we use UPDATE keyword with WHERE clause, otherwise we mess all the data because UPDATE query update/change values in all over the table,
+so we need to define a specific condition from where we want to update data or values in the table.
 
 we can run UPDATE query without WHERE clause but if we do this then all the values of a column will changed.
 So we use update query very carefully.
 
+a) Update One Column:
+
+to change the name of the user "Ahmad" in id=1:
+
+	UPDATE users SET name = "Ahmad" WHERE id = 1;
+
+b) Update Multiple Columns:
+
+to change the name "Fahad" and email "fahad@example.com" in id=2:
+
+	UPDATE users SET name = "Fahad", email = "fahad@example.com" WHERE id = 2;
+
+c) Witout WHERE Clause (Update All Rows):
+
+to change gender = "Other" to all the rows:
+
+	UPDATE users SET gender="Other";	
+
+Note: This updates every row in the table. Be very careful when omitting the WHERE clause.
+
+Quiz:
+
+1. update salary of user id = 5 to 70000:
+
+	UPDATE users SET salary = 70000 WHERE id = 5;
+
+2. change the name of user from "Aisha" to "Aisha Khan" where email is "aisha@example.com":
+
+	UPDATE users SET name = 'Aisha Khan' WHERE email = "aisha@example.com";
+
+3. Increase salary 10,000 for all users whose salary is less than 60,000:
+
+	UPDATE users SET salary = salary + 10000 WHERE salary < 60000;
+
+4. Set the gender of user Ishaan to Other:
+
+	UPDATE users SET gender = 'Other' WHERE name = 'Ishaan';
+
+5. Set salary 50000 to all the users:
+
+	UPDATE users SET salary = 50000;
+
+Note: This query will overwrite salary for every user. Use with caution!
 

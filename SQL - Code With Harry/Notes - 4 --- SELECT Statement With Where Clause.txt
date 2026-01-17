@@ -10,12 +10,20 @@ we can filter records/rows with WHERE clause.
 a) Basic Syntax:
 
 1. select all the records/columns of the table.
+
+	SELECT * FROM table_name;
 	SELECT * FROM users;
 
 2. select some specific records/columns of the table.
+
+	SELECT 1st_column_name, 2nd_column_name, ... FROM table_name;
 	SELECT column1, column2 FROM table_name;
 
 b) Filtering Rows With WHERE:
+
+Syntax:
+
+	SELECT * FROM table_name WHERE define_condition;
 
 1. Equal to:
 	to select records which is equal to something or any number, then we use "=" operator.
@@ -84,13 +92,16 @@ b) Filtering Rows With WHERE:
 	to select records from the table where either 1 condition can be true from both conditions, then we use "OR" operator.
 		SELECT * FROM users WHERE gender = 'Male' OR gender = 'Other';
 
-11. Order By:
+c) Order By:
         it shows data in ascending or descending order that you specify.
         we use ASC or DESC keyword for ascending or descending order with ORDER BY command.
         WHERE clause is not necessary with ORDER BY keyword.
         But we can use ORDER BY with WHERE clause.
 
-        to select records from the table where any record is ordered by ascending order or descending order, then we use "ORDER BY" keyword with "ASC/DESC" keyword.
+Syntax:
+	SELECT * FROM table_name ORDER BY column_name ASC/DESC;
+
+to select records from the table where any record is ordered by ascending order or descending order, then we use "ORDER BY" keyword with "ASC/DESC" keyword.
 
 	select all the records from the table where date of birth is order by ascending order:
 		SELECT * FROM users ORDER BY date_of_birth ASC;
@@ -98,29 +109,32 @@ b) Filtering Rows With WHERE:
 	select all the records from the table where name is order by descending order:
 		SELECT * FROM users ORDER BY name DESC;
 
-12. LIMIT:
+d) LIMIT:
         to select records from the table with any limit, then we use "LIMIT" keyword.	
 
-	to select top 5 records from the table:
+Syntax:	
+	SELECT * FROM table_name LIMIT define_limit_no;
+
+to select top 5 records from the table:
 		SELECT * FROM users LIMIT 5; 
 
-	to select records skip first 5 rows, then get next 10 from table:
+to select records skip first 5 rows, then get next 10 from table:
 		SELECT * FROM users LIMIT 10 OFFSET 5; 
 
-	to select 10 rows starting from the 6th row: 
+to select 10 rows starting from the 6th row: 
 		SELECT * FROM users LIMIT 5, 10; 
 
-	to select all the records which have timestamp in descending order with limit 10:
+to select all the records which have timestamp in descending order with limit 10:
 		SELECT * FROM users ORDER BY created_at DESC LIMIT 10;
 
 Quiz:
 
-	to select 5 records from the table that have salary greater than 60000 and timestamp is in descending order.
-		SELECT * FROM users WHERE salary > 60000 ORDER BY created_at DESC LIMIT 5;
+to select 5 records from the table that have salary greater than 60000 and timestamp is in descending order.
+	SELECT * FROM users WHERE salary > 60000 ORDER BY created_at DESC LIMIT 5;
 
-	to select all the records from the table and salary is in descending order:
-		SELECT * FROM users ORDER BY salary DESC;
+to select all the records from the table and salary is in descending order:
+	SELECT * FROM users ORDER BY salary DESC;
 
-	to select all the records from the table that have salary is in between 50000 - 70000:
-		SELECT * FROM users WHERE salary BETWEEN 50000 AND 70000;
+to select all the records from the table that have salary is in between 50000 - 70000:
+	SELECT * FROM users WHERE salary BETWEEN 50000 AND 70000;
 
