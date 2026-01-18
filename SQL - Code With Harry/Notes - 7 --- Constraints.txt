@@ -1,48 +1,92 @@
 Constraints:
 
-Constraints are the rules that applied to the table columns to ensure the accuracy, validity and integrity of the  table data.
+Constraints in MySQL are the rules that applied to the table columns to ensure the accuracy, validity and integrity of the table data.
 
-	PRIMARY KEY
-	AUTO_INCREMENT
-	UNIQUE 
-	NOT NULL
-	NULL
-	TIMESTAMP
-	CHECK
-	DEFAULT
+    AUTO_INCREMENT
+    PRIMARY KEY
+    UNIQUE 
+    NOT NULL    
+    NULL
+    TIMESTAMP
+    CHECK
+    DEFAULT
+
+ADD Constraints In Table That Already Created:
+
+we can add constraints in a table that already created by using "ADD CONSTRAINT" keyword with "ALTER TABLE" command and follow the syntax.
+
+Ways To Add Constraint In Table:
+
+There are 2 ways to add constraints in Table:
+
+1. When we create table
+2. Add constraint in table after table creation by using ALTER TABLE command.
 
 1. NOT NULL:
 
-NOT NULL constraint defines a column cannot have NULL value or empty.
-if we don't want to keep any column Null then we can use NOT NULL constraint.
-User must enter some data in the column, he cannot left the column empty.
+Ensures that a column cannot contain NULL values.
+
+The NOT NULL constraint defines that a column cannot have the NULL or empty value.
+if we don't want to keep any column Null then we can use NOT NULL constraint in that column.
+User must enter some data in that column, he cannot left the column empty.
+
+Example: 
+
+a) Method 1: Add Not Null Constraint During Table Creation:
+
+CREATE TABLE users (
+	id INT PRIMARY KEY,
+    	name VARCHAR(100) NOT NULL
+);
+
+b) Method 2: Create Table Without Not Null Constraint:
+
+CREATE TABLE users (
+	id INT PRIMARY KEY,
+    	name VARCHAR(100)
+);
+
+Then Add Constraint Not Null Using ALTER TABLE Command:
+
+Query:
+
+	ALTER TABLE users ADD CONSTRAINT not_null NOT NULL (name);
+
+Add Value In Column "name":
 
 Query 1:
 
-INSERT INTO users (name, email, gender) VALUES
-('user@example.com', 'Male');
+	INSERT INTO users (name, email, gender) VALUES
+	('user@example.com', 'Male');
 
-Here we left the column name empty, we did not enter any name, so it gives error, name cannot be null.
+Here we left the column "name" empty, we did not enter any name, so it gives error "name" cannot be null. User must enter any "name".
 
 Query 2:
 
-INSERT INTO users (name, email, gender) VALUES
-('NULL', 'user2@example.com', 'Male');
+	INSERT INTO users (name, email, gender) VALUES
+	(NULL, 'user2@example.com', 'Male'); OR
+	('NULL', 'user2@example.com', 'Male');
 
-Here we type the value NULL in the name column, it means also empty or null.
+Here we type the value "NULL" in the name column, it means also empty or null.
+
+Query 3:
+
+	INSERT INTO users (name, email, gender) VALUES
+	('Ahmad', 'user2@example.com', 'Male'); 
+
+Here we give the value in name column.
 
 2. UNIQUE:
 
-UNIQUE constraint defines that all the values in a column are unique and different to each other.
-UNIQUE constraint is used to store unique data in the column of table.
-we cannot enter the same data into the column that have UNIQUE constraint.
-it is used during table creation or we can add UNIQUE constraint in the column of the table that already created by using ALTER TABLE command and
-follow the add constraint syntax.
+UNIQUE constraint defines that all the values in a column are unique and different to each other/from other rows.
+UNIQUE constraint is used to store unique data for every rows in the column of table.
+we cannot enter the same data again into the column that have UNIQUE constraint.
+First it is used during table creation (when we create table).
+2nd we can add UNIQUE constraint in the column of Table that already created, by using ALTER TABLE command and follow the syntax of "add constraint in table".
 
 Example:
 
-if we use UNIQUE constraint in "email" column then user cannot create multiple accounts with the same email or 2 user accounts cannot use the same email
-to create accounts, they have to use unique email id's.
+a) Method 1: Add UNIQUE Constraint During Table Creation:
 
 Query:
 
@@ -51,20 +95,69 @@ CREATE TABLE users (
 	email VARCHAR(100) UNIQUE NOT NULL
 );
 
+b) Method 2: Create Table Without Unique Constraint:
+
+Query:
+
+CREATE TABLE users (
+	name VARCHAR(20) NOT NULL,
+	email VARCHAR(100) NOT NULL
+);
+
+Then Add UNIQUE Constraint Using ALTER TABLE Command:
+
+Query:
+	ALTER TABLE users ADD CONSTRAINT unique_email UNIQUE (email);
+
+Add Value In Column "email":
+
+if we use UNIQUE constraint in "email" column then user cannot create multiple accounts with the same email or 2 users cannot use the same email
+to create accounts, they have to use unique email id's.
+
+Query 1: same Email is used for 2 users:
+
+	INSERT INTO users (name, email, gender) VALUES
+	('user1', 'user1@example.com', 'male'),
+	('user2', 'user1@example.com', 'female'),
+	('user3', 'user3@example.com', 'male');
+
+Here we use same email accounts for users, it does not accept, gives error "email could not be duplicated" because UNIQUE constraint is used in email column.
+we need to give unique email accounts for different users.
+
+Query 2: Unique Email is used for multiple users:
+
+	INSERT INTO users (name, email, gender) VALUES
+	('user1', 'user1@example.com', 'male'),
+	('user2', 'user2@example.com', 'female'),
+	('user3', 'user3@example.com', 'male');
+
 3. CHECK:
 
-CHECK constraint checks the condition of the table data that user enters.
-we need to define a condition in CHECK constraint.
-it defines that any column should be stored data acccording to the defined condition.
+Ensures that values in a column satisfy a specific condition.
+
+CHECK constraint checks the condition of the table data, that user enters.
+we need to define a spcific condition in CHECK constraint.
+it defines that any column should be stored data acccording to the condition that you defined.
 any column can store data by must following the defined condition, otherwise it cannot store data.
 
 Example: 
 
-if we want to store date of birth after 1970-01-01 then we can use CHECK constraint:
+if we want to store date of birth after 1970-01-01 then we can use CHECK constraint
+and define condition of "date of birth" is greater than "1970-01-01":
 
-Query:
+Query 1:
 
 	ALTER TABLE users ADD CONSTRAINT chk_dob CHECK (date_of_birth > '1970-01-01');
+
+Example: Allow only dates of birth after Jan 1, 2000:
+
+Query 2:
+
+	ALTER TABLE users ADD CONSTRAINT chk_dob CHECK (date_of_birth > '2000-01-01');
+
+Q: Why we give constraint name to add a new constraint?
+
+A: Naming the constraint (chk_dob) helps if you want to drop it later.
 
 4. PRIMARY KEY:
 
@@ -74,31 +167,75 @@ PRIMARY KEY bydefault follows 2 conditions: "not null" and "unique".
 
 Example:
 
-if we want to create a serial no column in the table then we can use PRIMARY KEY constraint in this column.
-so that it automatically generates a unique no to every rows/records.
+if we want to create a serial no/id column in a table then we can use PRIMARY KEY constraint in this column.
+so that it automatically generates a unique no to every rows/records like 2 after 1, 5 after 4 and so on.
+
+Method 1: Add Primary Key During Table Creation:
 
 Query:
-
+	
 CREATE TABLE users (
 	id INT PRIMARY KEY AUTO_INCREMENT
 );
 
-5. DEFAULT:
-
-DEFAULT constraint defines/sets the default value for any column of the table.
-
-Example:
-
-if the user did not enter any value, then automatically a value will enter in that column that is called Default Value.
+Method 2: Add Primary Key Using ALTER TABLE Command:
 
 Query:
+
+	ALTER TABLE users ADD PRIMARY KEY (id); OR
+	ALTER TABLE users ADD CONSTRAINT primary_key PRIMARY KEY (id);
+
+5. DEFAULT:
+
+DEFAULT constraint defines/sets the default value for any column of the table if none/no value is provided during insert.
+if the user did not enter any value, then automatically a value will generate in that column, that is called Default Value.
+
+Add Default Constraint During Table Creation:
+
+Query 1:
 
 CREATE TABLE users (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(20) NOT NULL,
 	email VARCHAR(100) UNIQUE NOT NULL,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP	
+	is_active BOOLEAN
 );
+
+Here 2 columns have DEFAULT constraint "created_at, is_active". 
+
+Add Default Constraint Using ALTER TABLE Command:
+
+Query 2:
+
+	ALTER TABLE users ADD CONSTRAINT default DEFAULT (is_active) TRUE;	-------- check correct or wrong query 	OR
+	ALTER TABLE users ALTER COLUMN is_active SET DEFAULT TRUE;
+
+6. AUTO_INCREMENT:
+
+The AUTO_INCREMENT constraint is used with PRIMARY KEY to automatically assign the next number.
+It auto increment values in a column. 
+It could not be the same.
+
+Example:
+
+CREATE TABLE users (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    	name VARCHAR(100)
+);
+
+Each new row gets the next available integer value in id column.
+
+Summary:
+
+Constraint	Purpose
+
+UNIQUE		Prevents duplicate values
+NOT NULL	Ensures value is not NULL
+CHECK		Restricts values using a condition
+DEFAULT		Sets a default value
+PRIMARY KEY	Uniquely identifies each row
+AUTO_INCREMENT	Automatically generates unique numbers
 
 Q: Why we use "_" in CURRENT_TIMESTAMP and AUTO_INCREMENT and not use in PRIMARY KEY?
 
@@ -106,9 +243,7 @@ AUTO_INCREMENT
 TIMESTAMP
 NULL
 
-ADD Constraints In Table That Already Created:
 
-we can add constraints in a table that already created by using "ADD CONSTRAINT" keyword in "ALTER TABLE" command.
 
 
 

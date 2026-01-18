@@ -1,0 +1,126 @@
+Primary Key & AUTO INCREMENT:
+
+PRIMARY KEY:
+
+PRIMARY KEY is a constraint in SQL that uniquely identifies each rows in a table.
+it is one of the most important concepts in database.
+
+It is used to uniquely identifies each rows in a table.
+
+Characteristics of PRIMARY KEY:
+
+1. must be unique
+2. cannot be null/empty
+3. can be a single column or a combination of columns called "Composite Key".
+4. PRIMARY KEY constraint is used with AUTO_INCREMENT constraint.
+5. Each table can have only 1 PRIMARY KEY, not multiple.
+	Only 1 column in a table can become a PRIMARY KEY.
+	We can choose only 1 column from a table to make it PRIMARY KEY.
+	Cannot be easy to drop PRIMARY KEY.
+
+Q: Why PRIMARY KEY is used with AUTO_INCREMENT constraint?
+
+when we take integer ID, so we use AUTO_INCREMENT along with PRIMARY KEY. 
+because we want first record have id = 1, then second record have id = 2 and so on.
+so we use AUTO_INCREMENT so that it automatically generates a new number for every next record.
+And primary key is used to uniquely identifies each records of a table when we update, delete or do anything with records of table.
+
+D/F B/W PRIMARY KEY & UNIQUE:
+
+Q: How PRIMARY KEY is different from UNIQUE constraint?
+
+PRIMARY KEY and UNIQUE constraints might seem similar since both prevent duplicate values.
+But there are important differences. 
+
+PRIMARY KEY must be unique.
+UNIQUE must be unique.
+
+PRIMARY KEY does not allow NULL values.
+UNIQUE allows 1 or more NULL values.
+
+Only 1 PRIMARY KEY constraint is allowed in a table/in any 1 column of a table.
+Multiple UNIQUE constraints allowed in a table/in multiple columns of a table.
+
+Ideally PRIMARY KEY is required in a table.
+UNIQUE constraint is optional in a table.
+
+PRIMARY KEY cannot be easily dropped. 
+UNIQUE constraint can be easily dropped anytime. 
+
+EXAMPLE OF PRIMARY KEY:
+
+Query:
+
+	CREATE TABLE users (
+		id INT AUTO_INCREMENT PRIMARY KEY, 
+		name VARCHAR(50) NOT NULL,
+		email VARCHAR(100) UNIQUE NOT NULL
+	);
+
+in the above example:
+
+id is the unique identifier for each row.
+email must be unique but is not the primary key because it does not uniquely identifies each rows in a table.
+
+DROP PRIMARY KEY:
+
+Q: Can we drop/delete PRIMARY KEY constraint from a table?
+
+A: Yes, but it is more restricted than dropping a UNIQUE constraint. 
+   But this may fail if the primary key is being used anywhere like in a foreign key or auto increment column. 
+
+We use ALTER TABLE command to delete the PRIMARY KEY from a table.
+
+Syntax:
+
+	ALTER TABLE table_name DROP PRIMARY KEY;
+ 
+Query:
+
+	ALTER TABLE users DROP PRIMARY KEY;
+
+TO DROP A UNIQUE CONSTRAINT:
+
+Query:
+
+	ALTER TABLE users DROP INDEX email;
+
+Questions:
+
+What is PRIMARY KEY?
+Wy PRIMARY KEY is used in a table?
+How many PRIMARY KEY is used in a table?
+Do multiple PRIMARY KEYs are used in a table?
+
+AUTO INCREMENT:
+
+In MySQL, a PRIMARY KEY is often used with AUTO_INCREMENT constraint to automatically generate unique values for new rows.
+This means that every time we insert a new row in a table, MySQL will automatically generate/assign a unique value to the id column. 
+
+Query:
+
+	CREATE TABLE users (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(50) NOT NULL
+	);
+
+CHANGE THE STARTING VALUE OF AUTO_INCREMENT CONSTRAINT:
+
+we can change the starting value of AUTO_INCREMENT by using ALTER TABLE command.
+
+Syntax: 
+
+	ALTER TABLE table_name AUTO_INCREMENT = set_starting_value;
+
+Query:
+
+	ALTER TABLE users AUTO_INCREMENT = 1000;
+
+Summary:
+
+Use PRIMARY KEY constraint for the main unique identifier of each row.
+Use UNIQUE constraint for enforcing non-duplicate values in other columns (like email or phone).
+You can have only one primary key constraint, but you can have many unique constraints in a table.
+
+
+

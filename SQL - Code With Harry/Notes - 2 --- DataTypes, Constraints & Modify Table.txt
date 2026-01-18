@@ -80,9 +80,11 @@ Uses of Alter Table Command:
 	to move the position of any column after any column, use the keyword AFTER with MODIFY COLUMN along with ALTER TABLE and follow the syntax.
 	to move the position of any column to the first, use the keyword FIRST with MODIFY COLUMN along with ALTER TABLE and follow the syntax.
 
-6. change column name of the table
+6. change column name of the table:
 	to change/modify the name of any column, use the keyword MODIFY COLUMN with ALTER TABLE command and follow the syntax.
 
+7. change the constraint of any column:
+	to change the constraint of any column, use the keyword MODIFY COLUMN with ALTER TABLE command and follow the syntax.
 
 Questions:
 
